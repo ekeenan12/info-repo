@@ -7,6 +7,8 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 
+const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || 'https://your-railway-backend-url';
+
 export default function InfoRepositoryUI() {
   const [query, setQuery] = useState("");
   const [resources, setResources] = useState([]);
@@ -16,7 +18,7 @@ export default function InfoRepositoryUI() {
   const [tags, setTags] = useState("");
 
   useEffect(() => {
-    fetch(`/api/resources?query=${encodeURIComponent(query)}`)
+    fetch(`${BACKEND_URL}/api/resources?query=${encodeURIComponent(query)}`)
       .then((res) => res.json())
       .then(setResources);
   }, [query]);
@@ -28,7 +30,7 @@ export default function InfoRepositoryUI() {
     formData.append("notes", notes);
     formData.append("tags", tags);
 
-    await fetch("/api/upload", {
+    await fetch(`${BACKEND_URL}/api/upload`, {
       method: "POST",
       body: formData,
     });
@@ -41,7 +43,7 @@ export default function InfoRepositoryUI() {
   };
 
   const handleDelete = async (id) => {
-    await fetch(`/api/resources/${id}`, { method: "DELETE" });
+    await fetch(`${BACKEND_URL}/api/resources/${id}`, { method: "DELETE" });
     setQuery(query); // refresh list
   };
 
@@ -49,7 +51,7 @@ export default function InfoRepositoryUI() {
     const formData = new FormData();
     formData.append("notes", updatedNotes);
     formData.append("tags", updatedTags);
-    await fetch(`/api/resources/${id}`, { method: "PUT", body: formData });
+    await fetch(`${BACKEND_URL}/api/resources/${id}`, { method: "PUT", body: formData });
     setQuery(query); // refresh list
   };
 
