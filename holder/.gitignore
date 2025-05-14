@@ -1,0 +1,10 @@
+.env
+__pycache__/
+uploads/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+node_modules/
+.next/
+dist/

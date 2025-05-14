@@ -1,0 +1,1 @@
+Paste your frontend app files here (e.g., from Next.js scaffold).
