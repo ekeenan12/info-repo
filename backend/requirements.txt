@@ -1,8 +1,8 @@
-fastapi
-uvicorn
+fastapi==0.109.2
+uvicorn==0.27.1
 sqlalchemy
 python-docx
 PyMuPDF
 requests
 openai
-python-dotenv
+python-dotenv==1.0.0
