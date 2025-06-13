@@ -1,0 +1,17 @@
+# Ignore backend directory since we're only deploying frontend
+backend/
+holder/
+
+# Ignore other unnecessary files
+Dockerfile
+railway.json
+fastapi==0.103.1
+*.Zone.Identifier
+
+# Git files
+.git/
+.gitignore
+
+# Development files
+*.log
+.DS_Store
