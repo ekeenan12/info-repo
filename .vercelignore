@@ -8,10 +8,6 @@ railway.json
 fastapi==0.103.1
 *.Zone.Identifier
 
-# Git files
-.git/
-.gitignore
-
 # Development files
 *.log
 .DS_Store
