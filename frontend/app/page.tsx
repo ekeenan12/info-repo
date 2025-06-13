@@ -65,7 +65,7 @@ export default function InfoRepositoryUI() {
 
   return (
     <div className="p-6 space-y-6 max-w-7xl mx-auto">
-      <div className="text-3xl font-bold text-gray-900">My Information Repository</div>
+      <div className="text-3xl font-bold text-gray-900">Info Repository</div>
 
       <div className="flex gap-2">
         <input
